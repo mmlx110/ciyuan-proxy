@@ -1,0 +1,13 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "http://localhost:8002/common/web/version/update?target={{target}}&arch={{arch}}"
+      ]
+    }
+  }
+}

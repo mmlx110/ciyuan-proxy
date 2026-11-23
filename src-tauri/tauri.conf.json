@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "ciyuan-proxy",
+  "version": "0.1.5",
+  "identifier": "com.ciyuanproxy.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "词元代理",
+        "width": 1200,
+        "height": 900,
+        "center": true,
+        "label": "main"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; clipboard-read 'self'; clipboard-write 'self'; connect-src 'self' http://localhost:20112 https://api.ciyuanproxy.com"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "licenseFile": "../LICENSE",
+    "publisher": "CiyuanProxy",
+    "category": "Utility",
+    "shortDescription": "词元代理 - 模型API Token本地管理工具",
+    "longDescription": "词元代理是一个本地代理服务器工具，用于管理 AI 模型 API Token，提供安全的本地代理服务。",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "installMode": "perMachine",
+        "languages": ["SimpChinese"],
+        "displayLanguageSelector": false
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "10.15",
+      "exceptionDomain": ""
+    }
+  },
+  "plugins": {
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://api.ciyuanproxy.com/common/web/version/update?target={{target}}&arch={{arch}}"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEVFMkJGNEYzNjU4OTIyODQKUldTRUlvbGw4L1FyN3ZCL21HSElsVDNVdi9tNE9iM3YvaEl6M1ZUWW9NRTVzb3FPYWc2NWxDSmMK",
+      "dangerousInsecureTransportProtocol": true
+    }
+  }
+}

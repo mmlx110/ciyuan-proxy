@@ -31,10 +31,11 @@ ciyuan-proxy/
 │   │   └── lib.rs         # 入口
 │   ├── Cargo.toml
 │   └── tauri.conf.json
-├── 文档/                   # 项目文档
 ├── package.json
 └── vite.config.ts
 ```
+
+历史项目文档已归档至 [docs/desktop/archive/2025](../../docs/desktop/archive/2025/)。
 
 ## 开发指南
 
@@ -53,7 +54,7 @@ npm install
 ### 开发
 
 ```bash
-npm run tauri dev
+npm run tauri:dev
 ```
 
 ### 构建
@@ -61,9 +62,12 @@ npm run tauri dev
 ```bash
 npm run tauri build
 ```
+### 加密
+```bash
+.\sign-installer.ps1 -Installer ".\src-tauri\target\release\bundle\nsis\ciyuan-proxy_0.1.5_x64-setup.exe"
+```
 
 ## 数据结
-
 ```
 ProxyUrl（中转地址）
     └── Token（关联到地址）
@@ -78,4 +82,4 @@ ProxyUrl（中转地址）
 
 ## License
 
-MIT
+本项目采用 [Apache License 2.0](LICENSE) 开源许可证。

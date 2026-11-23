@@ -1,0 +1,39 @@
+{
+  "name": "ciyuan-proxy",
+  "private": true,
+  "version": "0.1.5",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:test": "vite --mode test",
+    "build": "tsc && vite build",
+    "build:test": "tsc && vite build --mode test",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "node scripts/tauri-env.mjs dev src-tauri/tauri.dev.conf.json",
+    "tauri:dev:test": "node scripts/tauri-env.mjs dev src-tauri/tauri.test.conf.json",
+    "tauri:build:prod": "tauri build",
+    "tauri:build:test": "node scripts/tauri-env.mjs build src-tauri/tauri.test.conf.json",
+    "version:sync": "node scripts/sync-version.mjs sync",
+    "version:bump": "node scripts/sync-version.mjs bump"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "~2.12.4",
+    "@tauri-apps/plugin-opener": "~2.7.2",
+    "@tauri-apps/plugin-updater": "~2.14.1",
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.15.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "~2.12.4",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "blakejs": "^1.2.1",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "build": {
+    "beforeDevCommand": "npm run dev:test",
+    "beforeBuildCommand": "npm run build:test"
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "http://localhost:8002/common/web/version/update?target={{target}}&arch={{arch}}"
+      ]
+    }
+  }
+}
