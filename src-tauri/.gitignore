@@ -12,3 +12,10 @@
 
 # 签名私钥密码(与 .key 配套,同样不能进仓库)
 *.key.pass
+
+# 本地运行数据库(含 token / api_key,严禁进仓库)
+/data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
